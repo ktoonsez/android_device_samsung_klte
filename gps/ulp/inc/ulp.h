@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation nor the names of its
+ *     * Neither the name of The Linux Foundation, nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -26,27 +26,34 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef LOC_TARGET_H
-#define LOC_TARGET_H
+
+#ifndef ULP_H
+#define ULP_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-typedef enum {
-    TARGET_OTHER = 0,
-    TARGET_APQ8064_STANDALONE,
-    TARGET_APQ8064_FUSION3,
-    TARGET_MPQ8064,
-    TARGET_MSM8930,
-    TARGET_APQ8030_STANDALONE
-}targetEnumType;
+#include <hardware/gps.h>
+#include "loc_eng.h"
 
-targetEnumType get_target(void);
+/** Represents the standard ulp module interface. */
+typedef struct {
+    /** set to sizeof(ulpInterface) */
+    size_t   size;
+
+    /**
+     * Starts the libulp module. 0: success
+     */
+    int   (*init)(loc_eng_data_s_type &loc_eng_data);
+
+}ulpInterface;
+
+typedef const ulpInterface* (get_ulp_interface) (void);
 
 #ifdef __cplusplus
 }
 #endif
+#endif /* ULP_H */
 
-#endif /*LOC_TARGET_H*/

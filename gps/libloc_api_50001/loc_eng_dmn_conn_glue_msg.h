@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,27 +26,26 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef LOC_TARGET_H
-#define LOC_TARGET_H
+#ifndef LOC_ENG_DMN_CONN_GLUE_MSG_H
+#define LOC_ENG_DMN_CONN_GLUE_MSG_H
 
 #ifdef __cplusplus
-extern "C"
-{
-#endif
+extern "C" {
+#endif /* __cplusplus */
 
-typedef enum {
-    TARGET_OTHER = 0,
-    TARGET_APQ8064_STANDALONE,
-    TARGET_APQ8064_FUSION3,
-    TARGET_MPQ8064,
-    TARGET_MSM8930,
-    TARGET_APQ8030_STANDALONE
-}targetEnumType;
 
-targetEnumType get_target(void);
+#include <linux/types.h>
+#include "loc_eng_dmn_conn_glue_pipe.h"
+
+int loc_eng_dmn_conn_glue_msgget(const char * q_path, int mode);
+int loc_eng_dmn_conn_glue_msgremove(const char * q_path, int msgqid);
+int loc_eng_dmn_conn_glue_msgsnd(int msgqid, const void * msgp, size_t msgsz);
+int loc_eng_dmn_conn_glue_msgrcv(int msgqid, void *msgp, size_t msgsz);
+int loc_eng_dmn_conn_glue_msgflush(int msgqid);
+int loc_eng_dmn_conn_glue_msgunblock(int msgqid);
 
 #ifdef __cplusplus
 }
-#endif
+#endif /* __cplusplus */
 
-#endif /*LOC_TARGET_H*/
+#endif /* LOC_ENG_DMN_CONN_GLUE_MSG_H */

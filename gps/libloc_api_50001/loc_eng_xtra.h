@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2009,2011 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,27 +26,21 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef LOC_TARGET_H
-#define LOC_TARGET_H
 
-#ifdef __cplusplus
-extern "C"
+#ifndef LOC_ENG_XTRA_H
+#define LOC_ENG_XTRA_H
+
+#include <hardware/gps.h>
+
+// Module data
+typedef struct
 {
-#endif
+   // loc_eng_ioctl_cb_data_s_type   ioctl_cb_data;
+   gps_xtra_download_request      download_request_cb;
 
-typedef enum {
-    TARGET_OTHER = 0,
-    TARGET_APQ8064_STANDALONE,
-    TARGET_APQ8064_FUSION3,
-    TARGET_MPQ8064,
-    TARGET_MSM8930,
-    TARGET_APQ8030_STANDALONE
-}targetEnumType;
+   // XTRA data buffer
+   char                          *xtra_data_for_injection;  // NULL if no pending data
+   int                            xtra_data_len;
+} loc_eng_xtra_data_s_type;
 
-targetEnumType get_target(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /*LOC_TARGET_H*/
+#endif // LOC_ENG_XTRA_H

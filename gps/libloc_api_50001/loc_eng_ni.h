@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2009,2011 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -26,27 +26,25 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef LOC_TARGET_H
-#define LOC_TARGET_H
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
+#ifndef LOC_ENG_NI_H
+#define LOC_ENG_NI_H
 
-typedef enum {
-    TARGET_OTHER = 0,
-    TARGET_APQ8064_STANDALONE,
-    TARGET_APQ8064_FUSION3,
-    TARGET_MPQ8064,
-    TARGET_MSM8930,
-    TARGET_APQ8030_STANDALONE
-}targetEnumType;
+#include <stdbool.h>
 
-targetEnumType get_target(void);
+#define LOC_NI_NO_RESPONSE_TIME            20                      /* secs */
+#define LOC_NI_NOTIF_KEY_ADDRESS           "Address"
 
-#ifdef __cplusplus
-}
-#endif
+typedef struct {
+    pthread_t               thread;            /* NI thread */
+    int                     respTimeLeft;       /* examine time for NI response */
+    bool                    respRecvd;   /* NI User reponse received or not from Java layer*/
+    void*                   rawRequest;
+    int                     reqID;         /* ID to check against response */
+    GpsUserResponseType     resp;
+    pthread_cond_t          tCond;
+    pthread_mutex_t         tLock;
+} loc_eng_ni_data_s_type;
 
-#endif /*LOC_TARGET_H*/
+
+#endif /* LOC_ENG_NI_H */

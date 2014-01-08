@@ -1,4 +1,4 @@
-/* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2012, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -9,7 +9,7 @@
  *       copyright notice, this list of conditions and the following
  *       disclaimer in the documentation and/or other materials provided
  *       with the distribution.
- *     * Neither the name of The Linux Foundation nor the names of its
+ *     * Neither the name of The Linux Foundation, nor the names of its
  *       contributors may be used to endorse or promote products derived
  *       from this software without specific prior written permission.
  *
@@ -26,27 +26,37 @@
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-#ifndef LOC_TARGET_H
-#define LOC_TARGET_H
+
+#ifndef LOC_ENG_LOG_H
+#define LOC_ENG_LOG_H
 
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-typedef enum {
-    TARGET_OTHER = 0,
-    TARGET_APQ8064_STANDALONE,
-    TARGET_APQ8064_FUSION3,
-    TARGET_MPQ8064,
-    TARGET_MSM8930,
-    TARGET_APQ8030_STANDALONE
-}targetEnumType;
+#include <ctype.h>
+#include <hardware/gps.h>
+#include <loc.h>
 
-targetEnumType get_target(void);
+const char* loc_get_gps_status_name(GpsStatusValue gps_status);
+const char* loc_get_msg_name(int id);
+const char* loc_get_position_mode_name(GpsPositionMode mode);
+const char* loc_get_position_recurrence_name(GpsPositionRecurrence recur);
+const char* loc_get_aiding_data_mask_names(GpsAidingData data);
+const char* loc_get_agps_type_name(AGpsType type);
+const char* loc_get_ni_type_name(GpsNiType type);
+const char* loc_get_ni_response_name(GpsUserResponseType response);
+const char* loc_get_ni_encoding_name(GpsNiEncodingType encoding);
+#ifdef FEATURE_IPV6
+const char* loc_get_agps_bear_name(AGpsBearerType bear);
+#endif
+const char* loc_get_server_type_name(LocServerType type);
+const char* loc_get_position_sess_status_name(enum loc_sess_status status);
+const char* loc_get_agps_status_name(AGpsStatusValue status);
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /*LOC_TARGET_H*/
+#endif /* LOC_ENG_LOG_H */
