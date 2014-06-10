@@ -110,6 +110,9 @@ TARGET_POWERHAL_VARIANT := qcom
 # Consumerir
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
+# We don't use old-ass RPC
+TARGET_NO_RPC := true
+
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm

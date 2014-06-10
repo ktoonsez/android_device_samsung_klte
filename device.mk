@@ -59,7 +59,10 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 
 # GPS
 PRODUCT_PACKAGES += \
-    gps.msm8974
+    gps.msm8974 \
+    libgps.utils \
+    libloc_core \
+    libloc_eng
 
 GPS_CONF := device/samsung/klte/gps/etc/gps.conf
 
