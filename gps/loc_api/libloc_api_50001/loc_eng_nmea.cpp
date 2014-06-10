@@ -654,7 +654,7 @@ void loc_eng_nmea_generate_sv(loc_eng_data_s_type *loc_eng_data_p,
             lengthRemaining = sizeof(sentence);
 
             length = snprintf(pMarker, lengthRemaining, "$GPGSV,%d,%d,%02d",
-                          sentenceCount, sentenceNumber, gpsCount);
+                          sentenceCount, sentenceNumber, svCount);
 
             if (length < 0 || length >= lengthRemaining)
             {
@@ -732,7 +732,7 @@ void loc_eng_nmea_generate_sv(loc_eng_data_s_type *loc_eng_data_p,
             lengthRemaining = sizeof(sentence);
 
             length = snprintf(pMarker, lengthRemaining, "$GLGSV,%d,%d,%02d",
-                          sentenceCount, sentenceNumber, glnCount);
+                          sentenceCount, sentenceNumber, svCount);
 
             if (length < 0 || length >= lengthRemaining)
             {
