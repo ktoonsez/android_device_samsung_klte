@@ -60,15 +60,11 @@ PRODUCT_BOOT_JARS += qcmediaplayer
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8974 \
-    libgps.utils \
-    libloc_core \
-    libloc_eng
 
-GPS_CONF := device/samsung/klte/gps/etc/gps.conf
+GPS_CONF := device/samsung/klte/gps/gps.conf
 
 PRODUCT_COPY_FILES += \
-    $(GPS_CONF):/system/etc/gps.conf \
-    device/samsung/klte/gps/etc/sap.conf:/system/etc/sap.conf
+    $(GPS_CONF):/system/etc/gps.conf
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

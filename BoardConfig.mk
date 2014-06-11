@@ -110,8 +110,11 @@ TARGET_POWERHAL_VARIANT := qcom
 # Consumerir
 TARGET_PROVIDES_CONSUMERIR_HAL := true
 
+# We have the new GPS driver
+BOARD_HAVE_NEW_QC_GPS := true
+
 # We don't use old-ass RPC
-TARGET_NO_RPC := true
+#TARGET_NO_RPC := true
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
