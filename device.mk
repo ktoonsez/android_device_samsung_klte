@@ -26,9 +26,9 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/klte/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Boot animation
-TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080
+# Boot animation use a private
+PRODUCT_COPY_FILES += \
+        device/samsung/klte/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
