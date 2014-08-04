@@ -1175,70 +1175,67 @@
 	<!-- TTY Scenario  -->
 	<!-- RX part -->
 	<path name="TTY-handset">
-		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="ES705 RX1 Enable" value="1" />
+		<path name="rcv" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
+		<ctl name="RX1 Digital Volume" value="82" />
 	</path>
 
 	<path name="TTY-handset-extra-vol">
-		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="ES705 RX1 Enable" value="1" />
+		<path name="rcv" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
+		<ctl name="RX1 Digital Volume" value="82" />
 	</path>
 
 	<path name="TTY-headset">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="ear" />
 		<ctl name="HPHL Volume" value="20" />
 		<ctl name="HPHR Volume" value="20" />
 		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="RX2 Digital Volume" value="84" />
-		<ctl name="ES705 RX1 Enable" value="1" />
 	</path>
 
 	<path name="TTY-full">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="ear" />
 		<ctl name="HPHL Volume" value="20" />
 		<ctl name="HPHR Volume" value="20" />
 		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="RX2 Digital Volume" value="84" />
-		<ctl name="ES705 RX1 Enable" value="1" />
 	</path>
 
 	<!-- TX part -->
 	<path name="TTY-vco-mic">
-		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="16" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="16" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="main-mic" />
+		<ctl name="DEC2 Volume" value="90" />
 		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
 		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
 		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
 		<ctl name="Internal Route Config" value="11" />
-		<ctl name="ES705 TX1 Enable" value="1" />
 		<ctl name="TTY Mode" value="VCO" />
 	</path>
 
 	<path name="TTY-headset-mic">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
 		<ctl name="Internal Route Config" value="12" />
-		<ctl name="ES705 TX1 Enable" value="1" />
 		<ctl name="TTY Mode" value="HCO" />
 	</path>
 
 	<path name="TTY-full-mic">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="ear-mic" />
-		<ctl name="ADC2 Volume" value="19" />
+		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="0" />
-		<ctl name="ES705 TX1 Enable" value="1" />
+		<ctl name="Internal Route Config" value="ZERO" />
 		<ctl name="TTY Mode" value="FULL" />
 	</path>
 	<!-- end of TTY Scenario -->
