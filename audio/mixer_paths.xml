@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <mixer>
-	<!-- H EUR ================================================ -->
+	<!-- KLTE EUR ================================================ -->
 	<!-- These are the initial mixer settings -->
 	<!-- reset RX part -->
 	<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="0" />
@@ -1245,14 +1245,14 @@
 	<!-- RX part -->
 	<path name="voip-handset-comm">
 		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
+		<ctl name="EAR PA Gain" value="POS_0_DB" />
 		<ctl name="RX1 Digital Volume" value="84" />
 	</path>
 
 	<path name="voip-speaker-comm">
 		<path name="spk" />
 		<ctl name="RX7 Digital Volume" value="84" />
-		<ctl name="SPK DRV Volume" value="8" />
+		<ctl name="SPK DRV Volume" value="6" />
 	</path>
 
 	<path name="voip-headset-comm">
@@ -1266,7 +1266,7 @@
 
 	<path name="voip-handset-others">
 		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
 		<ctl name="RX1 Digital Volume" value="84" />
 	</path>
 
@@ -1307,7 +1307,7 @@
 
 	<path name="voip-handset-carrier">
 		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
 		<ctl name="RX1 Digital Volume" value="84" />
 	</path>
 
@@ -1325,77 +1325,85 @@
 		<ctl name="RX2 Digital Volume" value="84" />
 	</path>
 
+	<path name="voip-handset-nonpcm">
+		<path name="rcv" />
+		<ctl name="EAR PA Gain" value="POS_3_DB" />
+		<ctl name="RX1 Digital Volume" value="84" />
+	</path>
+
+	<path name="voip-speaker-nonpcm">
+		<path name="spk" />
+		<ctl name="RX7 Digital Volume" value="84" />
+		<ctl name="SPK DRV Volume" value="8" />
+	</path>
+
+	<path name="voip-headset-nonpcm">
+		<path name="ear" />
+		<ctl name="HPHL DAC Switch" value="1" />
+		<ctl name="HPHL Volume" value="13" />
+		<ctl name="HPHR Volume" value="13" />
+		<ctl name="RX1 Digital Volume" value="84" />
+		<ctl name="RX2 Digital Volume" value="84" />
+	</path>
+
 	<!-- TX part -->
 	<path name="voip-main-mic-comm">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="90" />
 	</path>
 
 	<path name="voip-sub-mic-comm">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="17" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="voip-headphone-mic-comm">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 
 	<path name="voip-headset-mic-comm">
 		<path name="ear-mic" />
-		<ctl name="ADC2 Volume" value="19" />
+		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 	</path>
 
 	<path name="voip-main-mic-others">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="90" />
 	</path>
 
 	<path name="voip-sub-mic-others">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="19" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="voip-headphone-mic-others">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 
 	<path name="voip-headset-mic-others">
 		<path name="ear-mic" />
-		<ctl name="ADC2 Volume" value="19" />
+		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 	</path>
 
 	<path name="voip-main-mic-chaton">
 		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="12" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="voip-sub-mic-chaton">
 		<path name="sub-main-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="12" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="93" />
+		<ctl name="DEC4 Volume" value="93" />
 	</path>
 
 	<path name="voip-headphone-mic-chaton">
-		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="15" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="15" />
-		<ctl name="DEC4 Volume" value="84" />
+		<path name="main-mic" />
+		<ctl name="DEC2 Volume" value="90" />
 	</path>
 
 	<path name="voip-headset-mic-chaton">
@@ -1406,25 +1414,43 @@
 
 	<path name="voip-main-mic-carrier">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 
 	<path name="voip-sub-mic-carrier">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="16" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="voip-headphone-mic-carrier">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 
 	<path name="voip-headset-mic-carrier">
 		<path name="ear-mic" />
-		<ctl name="ADC2 Volume" value="19" />
+		<ctl name="ADC2 Volume" value="12" />
+		<ctl name="DEC5 Volume" value="84" />
+	</path>
+
+	<path name="voip-main-mic-nonpcm">
+		<path name="main-mic" />
+		<ctl name="DEC6 Volume" value="84" />
+	</path>
+
+	<path name="voip-sub-mic-nonpcm">
+		<path name="sub-mic" />
+		<ctl name="DEC4 Volume" value="84" />
+	</path>
+
+	<path name="voip-headphone-mic-nonpcm">
+		<path name="main-mic" />
+		<ctl name="DEC6 Volume" value="84" />
+	</path>
+
+	<path name="voip-headset-mic-nonpcm">
+		<path name="ear-mic" />
+		<ctl name="ADC2 Volume" value="12" />
 		<ctl name="DEC5 Volume" value="84" />
 	</path>
 	<!-- end of VoIP Scenario -->
