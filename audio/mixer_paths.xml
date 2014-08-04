@@ -879,44 +879,43 @@
 	<!-- Video call Scenario -->
 	<!-- RX part -->
 	<path name="video-call-handset">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="rcv" />
 		<ctl name="EAR PA Gain" value="POS_6_DB" />
-		<ctl name="RX1 Digital Volume" value="84" />
-		<ctl name="ES705 RX1 Enable" value="1" />
+		<ctl name="RX1 Digital Volume" value="82" />
 	</path>
 
 	<path name="video-call-handset-extra-vol">
-		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="ES705 RX1 Enable" value="1" />
+		<path name="rcv" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
+		<ctl name="RX1 Digital Volume" value="82" />
 	</path>
 
 	<path name="video-call-speaker">
 		<path name="spk" />
 		<ctl name="RX7 Digital Volume" value="84" />
 		<ctl name="SPK DRV Volume" value="8" />
-		<ctl name="ES705 RX1 Enable" value="1" />
 	</path>
 
 	<path name="video-call-speaker-extra-vol">
 		<path name="spk" />
-		<ctl name="RX7 Digital Volume" value="81" />
+		<ctl name="RX7 Digital Volume" value="84" />
 		<ctl name="SPK DRV Volume" value="8" />
 		<ctl name="COMP0 Switch" value="1" />
-		<ctl name="ES705 RX1 Enable" value="1" />
 	</path>
 
 	<path name="video-call-headset">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="ear" />
 		<ctl name="HPHL Volume" value="16" />
 		<ctl name="HPHR Volume" value="16" />
-		<ctl name="RX1 Digital Volume" value="84" />
-		<ctl name="RX2 Digital Volume" value="84" />
-		<ctl name="ES705 RX1 Enable" value="1" />
+		<ctl name="RX1 Digital Volume" value="82" />
+		<ctl name="RX2 Digital Volume" value="82" />
 	</path>
 
 	<path name="video-call-dock">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="lineout" />
 		<ctl name="SLIM_0_RX Channels" value="Two" />
 		<ctl name="LINEOUT1 Volume" value="20" />
@@ -925,81 +924,50 @@
 
 	<!-- TX part -->
 	<path name="video-call-main-mic">
-		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="12" />
-		<ctl name="DEC4 Volume" value="84" />
-		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
+		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="main-mic" />
+		<ctl name="DEC2 Volume" value="96" />
+		<ctl name="DEC4 Volume" value="96" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
 		<ctl name="Internal Route Config" value="4" />
-		<ctl name="ES705 TX1 Enable" value="1" />
 	</path>
 
 	<path name="video-call-sub-mic">
-		<path name="sub-3rd-mic" />
-		<ctl name="ADC4 Volume" value="12" />
-		<ctl name="DEC3 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="12" />
-		<ctl name="DEC4 Volume" value="84" />
-		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="3" />
-		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="sub-main-mic" />
+		<ctl name="DEC4 Volume" value="96" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 
 	<path name="video-call-headphone-mic">
-		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="0" />
 		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="main-mic" />
+		<ctl name="DEC2 Volume" value="96" />
+		<ctl name="ES705-AP Tx Channels" value="One" />
+		<ctl name="Internal Route Config" value="ZERO" />
 	</path>
 
 	<path name="video-call-headset-mic">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="12" />
-		<ctl name="DEC5 Volume" value="84" />
-		<ctl name="IIR1 INP1 MUX" value="DEC5" />
-		<ctl name="RX1 MIX2 INP1" value="IIR1" />
-		<ctl name="RX2 MIX2 INP1" value="IIR1" />
-		<ctl name="IIR1 INP1 Volume" value="61" />
+		<ctl name="DEC5 Volume" value="82" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="0" />
-		<ctl name="ES705 TX1 Enable" value="1" />
+		<ctl name="Internal Route Config" value="ZERO" />
 	</path>
 
 	<path name="video-call-NS-mic-handset">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="12" />
-		<ctl name="DEC4 Volume" value="84" />
-		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
+		<ctl name="DEC2 Volume" value="96" />
+		<ctl name="DEC4 Volume" value="96" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
 		<ctl name="Internal Route Config" value="2" />
-		<ctl name="ES705 TX1 Enable" value="1" />
 	</path>
 
 	<path name="video-call-NS-mic-speaker">
-		<path name="sub-3rd-mic" />
-		<ctl name="ADC4 Volume" value="16" />
-		<ctl name="DEC3 Volume" value="84" />
-		<ctl name="ADC3 Volume" value="16" />
-		<ctl name="DEC4 Volume" value="84" />
-		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
-		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="1" />
-		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="sub-main-mic" />
+		<ctl name="DEC4 Volume" value="96" />
+		<ctl name="DEC2 Volume" value="96" />
 	</path>
 	<!-- end of Video call Scenario  -->
 
