@@ -585,8 +585,7 @@
 
 	<path name="rec-high-gain-sub-mic">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="19" />
-		<!-- <ctl name="DEC4 Volume" value="94" /> -->
+		<ctl name="DEC4 Volume" value="87" />
 	</path>
 
 	<path name="rec-high-gain-headset-mic">
