@@ -654,7 +654,7 @@
 
 	<path name="bargein1-sub-mic">
 		<path name="sub-mic" />
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="bargein1-earphone-mic">
@@ -680,7 +680,7 @@
 	<path name="bargein2-sub-mic">
 		<path name="sub-mic" />
 		<!-- <ctl name="ADC3 Volume" value="12" /> -->
-		<ctl name="DEC4 Volume" value="84" />
+		<ctl name="DEC4 Volume" value="96" />
 	</path>
 
 	<path name="bargein2-earphone-mic">
@@ -776,7 +776,7 @@
 
 	<path name="voice-call-handset-hac">
 		<path name="rcv" />
-		<ctl name="EAR PA Gain" value="POS_3_DB" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
 		<ctl name="RX1 Digital Volume" value="84" />
 		<ctl name="ES705 RX1 Enable" value="1" />
 	</path>
@@ -816,8 +816,8 @@
 	<!-- TX part -->
 	<path name="voice-call-main-mic">
 		<path name="main-sub-mic" />
-		<ctl name="ADC1 Volume" value="12" />
-		<ctl name="DEC6 Volume" value="84" />
+		<ctl name="DEC2 Volume" value="96" />
+		<ctl name="DEC4 Volume" value="96" />
 		<ctl name="TX3 HPF cut off" value="MIN_3DB_150Hz" />
 		<ctl name="TX4 HPF cut off" value="MIN_3DB_150Hz" />
 		<ctl name="TX5 HPF cut off" value="MIN_3DB_150Hz" />
