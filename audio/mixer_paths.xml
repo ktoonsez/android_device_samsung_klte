@@ -1489,14 +1489,14 @@
 	<path name="loopback-handset-DSP">
 		<path name="rcv" />
 		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="79" />
+		<ctl name="RX1 Digital Volume" value="84" />
 	</path>
 
 	<path name="loopback-handset-2mic-on-DSP">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="rcv" />
 		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="79" />
-		<ctl name="ES705 RX1 Enable" value="1" />
+		<ctl name="RX1 Digital Volume" value="82" />
 	</path>
 
 	<path name="loopback-speaker-DSP">
@@ -1507,11 +1507,12 @@
 	</path>
 
 	<path name="loopback-headset-DSP">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="ear" />
-		<ctl name="HPHL Volume" value="20" />
-		<ctl name="HPHR Volume" value="20" />
-		<ctl name="RX1 Digital Volume" value="72" />
-		<ctl name="RX2 Digital Volume" value="72" />
+		<ctl name="HPHL Volume" value="11" />
+		<ctl name="HPHR Volume" value="11" />
+		<ctl name="RX1 Digital Volume" value="77" />
+		<ctl name="RX2 Digital Volume" value="77" />
 	</path>
 
 	<path name="loopback-handset">
@@ -1521,10 +1522,10 @@
 	</path>
 
 	<path name="loopback-handset-2mic-on">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="rcv" />
 		<ctl name="EAR PA Gain" value="POS_3_DB" />
-		<ctl name="RX1 Digital Volume" value="79" />
-		<ctl name="ES705 RX1 Enable" value="1" />
+		<ctl name="RX1 Digital Volume" value="84" />
 	</path>
 
 	<path name="loopback-speaker">
@@ -1534,90 +1535,93 @@
 	</path>
 
 	<path name="loopback-headset">
+		<ctl name="ES705 RX1 Enable" value="1" />
 		<path name="ear" />
-		<ctl name="HPHL Volume" value="20" />
-		<ctl name="HPHR Volume" value="20" />
-		<ctl name="RX1 Digital Volume" value="84" />
-		<ctl name="RX2 Digital Volume" value="84" />
+		<ctl name="HPHL Volume" value="13" />
+		<ctl name="HPHR Volume" value="13" />
+		<ctl name="RX1 Digital Volume" value="81" />
+		<ctl name="RX2 Digital Volume" value="81" />
 	</path>
 
 	<!-- TX part -->
 	<path name="loopback-main-mic-DSP">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="77" />
+		<ctl name="DEC2 Volume" value="89" />
 	</path>
 
 	<path name="loopback-main-mic-2mic-on-DSP">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="77" />
+		<ctl name="DEC2 Volume" value="89" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
 		<ctl name="Internal Route Config" value="17" />
-		<ctl name="ES705 TX1 Enable" value="1" />
 	</path>
 
 	<path name="loopback-sub-mic-DSP">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="11" />
-		<ctl name="DEC4 Volume" value="88" />
+		<ctl name="DEC4 Volume" value="84" />
 	</path>
 
 	<path name="loopback-3rd-mic-DSP">
 		<path name="3rd-mic" />
-		<ctl name="ADC4 Volume" value="11" />
-		<ctl name="DEC3 Volume" value="81" />
+		<ctl name="DEC6 Volume" value="84" />
 	</path>
 
 	<path name="loopback-headphone-mic-DSP">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="74" />
+		<ctl name="DEC2 Volume" value="74" />
+		<ctl name="ES705-AP Tx Channels" value="One" />
+		<ctl name="Internal Route Config" value="19" />	
 	</path>
 
 	<path name="loopback-headset-mic-DSP">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="19" />
-		<ctl name="DEC5 Volume" value="74" />
-	</path>
-
-	<path name="loopback-main-mic-2mic-on">
-		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="77" />
+		<ctl name="DEC5 Volume" value="84" />
 		<ctl name="ES705-AP Tx Channels" value="One" />
-		<ctl name="Internal Route Config" value="17" />
-		<ctl name="ES705 TX1 Enable" value="1" />
+		<ctl name="Internal Route Config" value="19" />
 	</path>
 
 	<path name="loopback-main-mic">
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="74" />
+		<ctl name="DEC2 Volume" value="74" />
+	</path>
+
+	<path name="loopback-main-mic-2mic-on">
+		<ctl name="ES705 TX1 Enable" value="1" />
+		<path name="main-mic" />
+		<ctl name="DEC2 Volume" value="74" />
+		<ctl name="ES705-AP Tx Channels" value="One" />
+		<ctl name="Internal Route Config" value="17" />
 	</path>
 
 	<path name="loopback-sub-mic">
 		<path name="sub-mic" />
-		<ctl name="ADC3 Volume" value="11" />
-		<ctl name="DEC4 Volume" value="88" />
+		<ctl name="DEC4 Volume" value="84" />
 	</path>
 
 	<path name="loopback-3rd-mic">
 		<path name="3rd-mic" />
-		<ctl name="ADC4 Volume" value="19" />
-		<ctl name="DEC3 Volume" value="88" />
+		<ctl name="DEC6 Volume" value="84" />
 	</path>
 
 	<path name="loopback-headphone-mic">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="main-mic" />
-		<ctl name="ADC1 Volume" value="19" />
-		<ctl name="DEC6 Volume" value="74" />
+		<ctl name="DEC2 Volume" value="74" />
+		<ctl name="ES705-AP Tx Channels" value="One" />
+		<ctl name="Internal Route Config" value="19" />
 	</path>
 
 	<path name="loopback-headset-mic">
+		<ctl name="ES705 TX1 Enable" value="1" />
 		<path name="ear-mic" />
 		<ctl name="ADC2 Volume" value="19" />
 		<ctl name="DEC5 Volume" value="84" />
+		<ctl name="ES705-AP Tx Channels" value="One" />
+		<ctl name="Internal Route Config" value="19" />
 	</path>
 
 	<!-- end of Factory Scenario -->
