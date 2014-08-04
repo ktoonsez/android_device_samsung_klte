@@ -193,20 +193,7 @@
 		<ctl name="AUX_PCM_RX Audio Mixer MultiMedia1" value="1" />
 	</path>
 
-    <path name="deep-buffer-playback afe-proxy">
-        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
-    </path>
-
-    <path name="deep-buffer-playback usb-headphones">
-        <path name="deep-buffer-playback afe-proxy" />
-    </path>
-
-    <path name="deep-buffer-playback speaker-and-usb-headphones">
-        <path name="deep-buffer-playback usb-headphones" />
-        <path name="deep-buffer-playback" />
-    </path>
-
-	<!-- low latency(JAM) -->
+	<!-- low latency -->
 	<path name="low-latency-playback">
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
 	</path>
@@ -246,19 +233,6 @@
 	<path name="compress-offload-playback bt-sco">
 		<ctl name="AUX_PCM_RX Audio Mixer MultiMedia4" value="1" />
 	</path>
-
-    <path name="compress-offload-playback afe-proxy">
-        <ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
-    </path>
-
-    <path name="compress-offload-playback usb-headphones">
-        <path name="compress-offload-playback afe-proxy" />
-    </path>
-
-    <path name="compress-offload-playback speaker-and-usb-headphones">
-        <path name="compress-offload-playback usb-headphones" />
-        <path name="compress-offload-playback" />
-    </path>
 
 	<!-- other -->
 	<path name="multi-channel-playback hdmi">
@@ -569,7 +543,7 @@
 	</path>
 
 	<path name="rec-stereo-mic">
-		<ctl name="Main Mic Delay" value="4" />
+		<!-- <ctl name="Main Mic Delay" value="4" /> -->
 		<path name="sub-main-mic" />
 		<ctl name="DEC2 Volume" value="95" />
 		<ctl name="DEC4 Volume" value="94" />
