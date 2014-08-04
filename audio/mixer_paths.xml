@@ -432,6 +432,19 @@
 		<ctl name="DEC2 MUX" value="DMIC2" />
 	</path>
 
+	<path name="fm-mic">
+		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+		<ctl name="SLIM_0_TX Channels" value="One" />
+		<ctl name="SLIM TX7 MUX" value="DEC8" />
+		<ctl name="DEC8 MUX" value="ADC5" />
+		<ctl name="DEC7 MUX" value="ADC6" />
+		<ctl name="IIR1 INP1 MUX" value="DEC8" />
+		<ctl name="IIR2 INP1 MUX" value="DEC7" />
+		<ctl name="RX1 MIX1 INP2" value="IIR1" />
+		<ctl name="RX2 MIX1 INP2" value="IIR2" />
+		<ctl name="RX7 MIX2 INP1" value="IIR1" />
+		<ctl name="RX7 MIX2 INP2" value="IIR2" />
+	</path>
   <!--  <path name="listen-low-power">
         <ctl name="LSM1 MUX" value="SLIMBUS_5_TX" />
         <ctl name="SLIMBUS_5_TX LSM Function" value="AUDIO" />
@@ -448,7 +461,6 @@
 	</path>
 
 	<path name="speaker">
-		<!-- <ctl name="SPK Status" value="1" /> -->
 		<path name="spk" />
 		<ctl name="RX7 Digital Volume" value="79" />
 		<ctl name="SPK DRV Volume" value="8" />
@@ -671,6 +683,35 @@
 	</path>
 
 	<!-- end of recognition Scenario -->
+
+	<!-- ================================================================ -->
+	<!-- FM Scenario -->
+	<!-- RX part -->
+	<path name="fm-speaker">
+		<path name="spk" />
+		<ctl name="RX7 Digital Volume" value="84" />
+		<ctl name="SPK DRV Volume" value="6" />
+	</path>
+
+	<path name="fm-headset">
+		<path name="ear" />
+		<ctl name="HPHL Volume" value="12" />
+		<ctl name="HPHR Volume" value="12" />
+		<ctl name="RX1 Digital Volume" value="86" />
+		<ctl name="RX2 Digital Volume" value="86" />
+	</path>
+
+	<!-- TX part -->
+	<path name="fm-input">
+		<path name="fm-mic" />
+		<ctl name="DEC8 Volume" value="84" />
+		<ctl name="DEC7 Volume" value="84" />
+		<ctl name="ADC5 Volume" value="12" />
+		<ctl name="ADC6 Volume" value="12" />
+		<ctl name="IIR1 INP1 Volume" value="84" />
+		<ctl name="IIR2 INP1 Volume" value="84" />
+	</path>
+	<!-- end of FM Scenario -->
 
 	<!-- ================================================================ -->
 	<!-- Voice call Scenario -->
