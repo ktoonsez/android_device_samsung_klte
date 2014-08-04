@@ -390,7 +390,7 @@
 	</path>
 
 	<!-- TX part -->
-	<path name="main-mic">
+		<path name="main-mic">
 		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
 		<ctl name="SLIM_0_TX Channels" value="One" />
 		<ctl name="SLIM TX7 MUX" value="DEC2" />
@@ -432,20 +432,55 @@
 		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
 		<ctl name="SLIM_0_TX Channels" value="Two" />
 		<ctl name="SLIM TX7 MUX" value="DEC4" />
-		<ctl name="DEC4 MUX" value="ADC3" />
+		<ctl name="DEC4 MUX" value="DMIC4" />
 		<ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
-		<ctl name="SLIM TX8 MUX" value="DEC6" />
-		<ctl name="DEC6 MUX" value="ADC1" />
+		<ctl name="SLIM TX8 MUX" value="DEC2" />
+		<ctl name="DEC2 MUX" value="DMIC2" />
 	</path>
 
 	<path name="sub-3rd-mic">
 		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
 		<ctl name="SLIM_0_TX Channels" value="Two" />
-		<ctl name="SLIM TX7 MUX" value="DEC3" />
-		<ctl name="DEC3 MUX" value="ADC4" />
+		<ctl name="SLIM TX7 MUX" value="DEC4" />
+		<ctl name="DEC4 MUX" value="DMIC4" />
+		<ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
+		<ctl name="SLIM TX8 MUX" value="DEC6" />
+		<ctl name="DEC6 MUX" value="DMIC6" />
+	</path>
+
+	<path name="main-3rd-mic">
+		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+		<ctl name="SLIM_0_TX Channels" value="Two" />
+		<ctl name="SLIM TX7 MUX" value="DEC2" />
+		<ctl name="DEC2 MUX" value="DMIC2" />
+		<ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
+		<ctl name="SLIM TX8 MUX" value="DEC6" />
+		<ctl name="DEC6 MUX" value="DMIC6" />
+	</path>
+
+	<path name="main-sub-3rd-mic">
+		<ctl name="SLIM_0_TX Channels" value="Three" />
+		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+		<ctl name="SLIM TX7 MUX" value="DEC2" />
+		<ctl name="DEC2 MUX" value="DMIC2" />
 		<ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
 		<ctl name="SLIM TX8 MUX" value="DEC4" />
-		<ctl name="DEC4 MUX" value="ADC3" />
+		<ctl name="DEC4 MUX" value="DMIC4" />
+		<ctl name="AIF1_CAP Mixer SLIM TX9" value="1" />
+		<ctl name="SLIM TX9 MUX" value="DEC6" />
+		<ctl name="DEC6 MUX" value="DMIC6" />
+	</path>
+	<path name="3rd-sub-main-mic">
+		<ctl name="SLIM_0_TX Channels" value="Three" />
+		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+		<ctl name="SLIM TX7 MUX" value="DEC6" />
+		<ctl name="DEC6 MUX" value="DMIC6" />
+		<ctl name="AIF1_CAP Mixer SLIM TX8" value="1" />
+		<ctl name="SLIM TX8 MUX" value="DEC4" />
+		<ctl name="DEC4 MUX" value="DMIC4" />
+		<ctl name="AIF1_CAP Mixer SLIM TX9" value="1" />
+		<ctl name="SLIM TX9 MUX" value="DEC2" />
+		<ctl name="DEC2 MUX" value="DMIC2" />
 	</path>
 
     <path name="listen-low-power">
