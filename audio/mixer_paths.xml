@@ -856,6 +856,25 @@
 	</path>
 	<!-- end of Voice call Scenario  -->
 
+	<!-- ================================================================ -->	
+	<!-- call forward Scenario -->
+	<path name="voice-call-forward">
+		<ctl name="SLIM RX1 MUX" value="AIF1_PB" />
+		<ctl name="SLIM_0_RX Channels" value="One" />
+		<ctl name="RX1 MIX1 INP1" value="RX1" />
+		<ctl name="CLASS_H_DSM MUX" value="DSM_HPHL_RX1" />
+		<ctl name="EAR PA Gain" value="POS_6_DB" />
+		<ctl name="RX1 Digital Volume" value="0" />
+	</path>
+	
+	<path name="voice-call-forward-mic">
+		<ctl name="AIF1_CAP Mixer SLIM TX7" value="1" />
+		<ctl name="SLIM_0_TX Channels" value="One" />
+		<ctl name="SLIM TX7 MUX" value="DEC6" />
+		<ctl name="DEC6 MUX" value="ADC1" />
+		<ctl name="DEC6 Volume" value="0" />
+	</path>
+	<!-- end of call forward Scenario -->
 	<!-- ================================================================ -->
 	<!-- Video call Scenario -->
 	<!-- RX part -->
