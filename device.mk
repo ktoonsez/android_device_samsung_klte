@@ -57,10 +57,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     gps.msm8974
 
-# Torch
-PRODUCT_PACKAGES += \
-    Torch
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flp.conf:/system/etc/flp.conf \
     $(LOCAL_PATH)/configs/gps.conf:/system/etc/gps.conf \
@@ -85,11 +81,14 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    nfc_nci.klte \
+    libnfc-nci \
+    libnfc_nci_jni \
     NfcNci \
-    Tag
+    nfc_nci.msm8974 \
+    Tag \
+    com.android.nfc_extras
 
+# NFC Config Files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/configs/libnfc-brcm-20791b04.conf:system/etc/libnfc-brcm-20791b04.conf \
@@ -105,6 +104,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.sec.boot.sh \
     ueventd.qcom.rc
+
+# Torch
+PRODUCT_PACKAGES += \
+    Torch
 
 # Thermal
 PRODUCT_COPY_FILES += \
