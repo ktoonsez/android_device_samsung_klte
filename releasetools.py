@@ -60,5 +60,3 @@ def FullOTA_InstallEnd(info):
   info.script.AppendExtra('delete_recursive("/system/lib/hw/spr/");')
   info.script.AppendExtra('delete_recursive("/system/lib/gsm/");')
   info.script.AppendExtra('delete_recursive("/system/lib/cdma/");')
-  info.script.AppendExtra('delete_recursive("/system/lib/hw/gsm/");')
-  info.script.AppendExtra('delete_recursive("/system/lib/hw/spr/");')
