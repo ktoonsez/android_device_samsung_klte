@@ -127,6 +127,20 @@ on post-fs
 
 on post-fs-data
 
+    # For disabling softkeys *FIXME*
+    chown root system /sys/class/leds/button-backlight/max_brightness
+    chmod 0664 /sys/class/leds/button-backlight/max_brightness
+
+    chmod 666 /sys/class/leds/torch-sec1/brightness
+    chown system camera /sys/class/leds/torch-sec1/brightness
+
+    chown system system /sys/class/sec/sec_touchkey/keypad_enable
+    chmod 0660 /sys/class/sec/sec_touchkey/keypad_enable
+
+    # Color Calibration
+    chown root system /sys/class/misc/gammacontrol/tuner
+    chmod 0664 /sys/class/misc/gammacontrol/tuner
+
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/media 0775 media_rw media_rw
     chown media_rw media_rw /data/media
@@ -186,20 +200,6 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.3/polling
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
-    # For disabling softkeys *FIXME*
-    chown root system /sys/class/leds/button-backlight/max_brightness
-    chmod 0664 /sys/class/leds/button-backlight/max_brightness
-
-    chmod 666 /sys/class/leds/torch-sec1/brightness
-    chown system camera /sys/class/leds/torch-sec1/brightness
-
-    chown system system /sys/class/sec/sec_touchkey/keypad_enable
-    chmod 0660 /sys/class/sec/sec_touchkey/keypad_enable
-
-    # Color Calibration
-    chown root system /sys/class/misc/gammacontrol/tuner
-    chmod 0664 /sys/class/misc/gammacontrol/tuner
-
     #Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
     mkdir /data/system 0775 system system
 
@@ -242,6 +242,12 @@ on post-fs-data
 
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
+
+    mkdir /data/misc/media 0700 media media
+
+    # create directory for MediaDrm plug-ins - give drm the read/write access to
+    # the following directory.
+    mkdir /data/mediadrm 0770 mediadrm mediadrm
 
     # Gpio DVS
     chown radio system /sys/class/secgpio_check/secgpio_check_all/secgpio_ctrl
@@ -463,7 +469,6 @@ on boot
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
-
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -729,27 +734,27 @@ on boot
     chown system system /sys/class/sec/tsp/input/enabled
 
     # Permissions for Camera
-   chown root system /sys/class/camera/rear/rear_camantibanding
-   chown system radio /sys/class/camera/rear/rear_camfw
-   chown system radio /sys/class/camera/rear/rear_camfw_full
-   chown system radio /sys/class/camera/rear/rear_camfw_load
-   chown system radio /sys/class/camera/rear/rear_camtype
-   chown system radio /sys/class/camera/rear/rear_corever
-   chown system radio /sys/class/camera/rear/rear_companionfw_full
-   chown system radio /sys/class/camera/rear/rear_calcheck
-   chown system radio /sys/class/camera/rear/rear_fwcheck
-   chown system radio /sys/class/camera/rear/isp_core
-   chown system radio /sys/class/camera/flash/rear_flash
-   chown system radio /sys/class/camera/front/front_camfw
-   chown system radio /sys/class/camera/front/front_camtype
+    chown root system /sys/class/camera/rear/rear_camantibanding
+    chown system radio /sys/class/camera/rear/rear_camfw
+    chown system radio /sys/class/camera/rear/rear_camfw_full
+    chown system radio /sys/class/camera/rear/rear_camfw_load
+    chown system radio /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_corever
+    chown system radio /sys/class/camera/rear/rear_companionfw_full
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/rear_fwcheck
+    chown system radio /sys/class/camera/rear/isp_core
+    chown system radio /sys/class/camera/flash/rear_flash
+    chown system radio /sys/class/camera/front/front_camfw
+    chown system radio /sys/class/camera/front/front_camtype
 
     #OTG Test
     chown system radio /sys/class/host_notify/usb_otg/booster
     chmod 0660 /sys/class/host_notify/usb_otg/booster
 
     # Permissions for Audio
-   chown system system /sys/devices/fe12f000.slim/es705-codec-gen0/keyword_grammar_path
-   chown system system /sys/devices/fe12f000.slim/es705-codec-gen0/keyword_net_path
+    chown system system /sys/devices/fe12f000.slim/es705-codec-gen0/keyword_grammar_path
+    chown system system /sys/devices/fe12f000.slim/es705-codec-gen0/keyword_net_path
 
     # Accelerometer_sensor
     chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
@@ -1056,15 +1061,15 @@ on boot
 
 # Services begin here
 
-service adsprpcd /system/bin/adsprpcd
-    class main
-    user media
-    group media
-
 service qcamerasvr /system/bin/mm-qcamera-daemon
     class main
     user camera
     group camera system inet input graphics radio sdcard_rw sdcard_r media_rw shell log
+
+service adsprpcd /system/bin/adsprpcd
+   class main
+   user media
+   group media
 
 service gsiff_daemon /system/bin/gsiff_daemon
     class late_start
@@ -1353,6 +1358,31 @@ service fuse_sdcard1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard1
 service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdisk /storage/usbdisk
     class late_start
     disabled
+
+service diag_mdlog_start /system/bin/diag_mdlog
+    class late_start
+    user sdcard_rw
+    group system qcom_diag sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_mdlog_stop /system/bin/diag_mdlog -k
+    class late_start
+    user sdcard_rw
+    group system qcom_diag sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service media /system/bin/mediaserver
+    class main
+    user media
+    group system audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm qcom_diag sdcard_rw sdcard_r media_rw shell qcom_diag lgt_gid
+    ioprio rt 4
+
+# icd
+on property:init.svc.media=restarting
+    check_icd
+    start icd
 
 service scranton_RD /system/bin/scranton_RD
     class main
