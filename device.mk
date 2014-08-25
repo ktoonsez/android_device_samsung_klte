@@ -127,5 +127,10 @@ PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
+#TWRP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab \
+    $(LOCAL_PATH)/rootdir/etc/prebuilt_file_contexts:recovery/root/prebuilt_file_contexts
+
 # common msm8974
 $(call inherit-product, device/samsung/msm8974-common/msm8974.mk)
